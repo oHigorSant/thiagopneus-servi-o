@@ -1,22 +1,7 @@
-// Scroll Reveal Animation
-function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        // Adjusted threshold for better mobile experience
-        var elementVisible = windowHeight * 0.15; 
-        if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add("active");
-        }
-    }
-}
-
-window.addEventListener("scroll", reveal);
-
-// Trigger reveal on load
+// Trigger reveal on load (fallback or initial check)
 document.addEventListener("DOMContentLoaded", () => {
-    reveal();
+    // Reveal animations are handled by IntersectionObserver in index.html
+    // but we can add any other initialization logic here
 });
 
 // Form Submission (Simulated)
