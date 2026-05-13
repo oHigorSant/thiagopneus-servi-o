@@ -24,9 +24,4 @@ if (form) {
     });
 }
 
-// Logo Carousel Auto-scroll simulation (optional, just adds life)
-const track = document.querySelector('.carousel-track');
-if (track) {
-    let items = track.innerHTML;
-    track.innerHTML += items; // Double items for loop
-}
+
