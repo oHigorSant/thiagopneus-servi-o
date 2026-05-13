@@ -239,15 +239,35 @@ section {
 
 /* Pre-Hero */
 .pre-hero {
-    padding: 160px 0 120px;
+    padding: 180px 0 140px;
     text-align: center;
     position: relative;
-    background-image: 
-        radial-gradient(circle at center, rgba(1, 4, 19, 0.3) 0%, rgba(1, 4, 19, 0.85) 100%), 
-        url('hero.png');
+    background-color: var(--bg-color);
+    overflow: hidden;
+}
+
+.pre-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('hero.png');
     background-size: cover;
     background-position: center 20%;
-    overflow: hidden;
+    filter: brightness(0.6) saturate(0.8) contrast(1.1) blur(2px);
+    z-index: 0;
+}
+
+.pre-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(30, 64, 175, 0.35) 0%, var(--bg-color) 85%);
+    z-index: 1;
+}
+
+.pre-hero .container {
+    position: relative;
+    z-index: 2;
 }
 
 .pre-hero h2 {
