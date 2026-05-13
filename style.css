@@ -274,8 +274,12 @@ section {
         padding: 120px 0 80px;
     }
     .pre-hero::before {
-        background-position: center 35%; /* Better positioning for dashboard on mobile */
-        filter: brightness(0.7) saturate(0.9) blur(1px); /* Less blur/darkness on mobile to show lights */
+        background-position: center 40%; 
+        background-size: 180%; /* Zoom in on the lights for mobile */
+        filter: brightness(0.9) saturate(1.2) blur(0px); /* Clearer on mobile */
+    }
+    .pre-hero::after {
+        background: radial-gradient(circle at center, rgba(30, 64, 175, 0.2) 0%, rgba(1, 4, 19, 0.6) 100%);
     }
 }
 
