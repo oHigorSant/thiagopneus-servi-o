@@ -252,34 +252,30 @@ section {
     inset: 0;
     background-image: url('hero.png');
     background-size: cover;
-    background-position: center 20%;
-    filter: brightness(0.65) saturate(1) contrast(1.1); /* Removed blur */
+    background-position: center;
+    filter: none !important;
     z-index: 0;
-    /* Smooth fade at the bottom for fluid transition */
-    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
 .pre-hero::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(30, 64, 175, 0.3) 0%, var(--bg-color) 90%);
+    background: rgba(1, 4, 19, 0.5); /* Simple transparent dark overlay, no gradient blur */
     z-index: 1;
 }
 
-/* Mobile specific adjustments for pre-hero image */
+/* Mobile adjustments */
 @media (max-width: 768px) {
     .pre-hero {
-        padding: 120px 0 80px;
+        padding: 110px 0 70px;
     }
     .pre-hero::before {
-        background-position: center 40%; 
-        background-size: 180%; /* Zoom in on the lights for mobile */
-        filter: brightness(1) saturate(1.2); /* Completely removed blur and darkened less */
+        background-position: center 30%; 
+        background-size: cover; /* Use cover to avoid stretching/blurriness */
     }
     .pre-hero::after {
-        background: radial-gradient(circle at center, rgba(30, 64, 175, 0.2) 0%, rgba(1, 4, 19, 0.6) 100%);
+        background: rgba(1, 4, 19, 0.4);
     }
 }
 
